@@ -5,8 +5,8 @@ from itertools import combinations
 
 model = YOLO("yolov8n.pt")
 
-#cap = cv2.VideoCapture("/Users/aidanrus/Downloads/CarsRoad.mp4")
-cap = cv2.VideoCapture(0) 
+cap = cv2.VideoCapture("/Users/aidanrus/Movies/CapCut/Exports/1106.mp4")
+#cap = cv2.VideoCapture(0) 
 
 
 DISTANCE_THRESHOLD = 100  
@@ -37,8 +37,8 @@ while True:
             label = model.names[cls_id]
 
             # Only cars
-            #if label != "car":
-            #    continue
+            if label != "car":
+                continue
 
             if conf < 0.20:
                 continue
